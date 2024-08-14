@@ -19,7 +19,7 @@ export default function contactSection() {
                   </div>
                   <div className='socialMedias'>
                     <img src={logoMail} alt="" />
-                    <h4>BengaluSoftware@gmail.com</h4>
+                    <a className='link' href="mailto:bengaluSoftware@gmail.com"><h4>BengaluSoftware@gmail.com</h4></a>
                   </div>
                   <div className='socialMedias'>
                     <img src={logoIg} alt="" />

@@ -7,10 +7,8 @@
   box-sizing: border-box;
 }
 
-.App{
+.App {
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   flex-direction: column;
 }
@@ -33,81 +31,82 @@
 
 /* General */
 body {
- 
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,;
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--background-dark);
   color: var(--color-text);
 }
-h1{ 
+
+h1 { 
   font-weight: var(--subtitle-weight);
   font-size: var(--subtitle-size);
 }
-p{
+
+p {
   font-size: var(--parrafos-size);
   font-weight: var(--subtitle-weight);
 }
 
-
 /* Header */
-.bannerHeader {
-  width: 100vw;
-  height: var(--banner-height);
-  background-color: var(--background-dark);
+.headerContainer {
+  z-index: 111;
+  height: 3vw;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(55, 55, 55);
   color: var(--color-white);
-  align-content: center;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 63vw;
+  justify-content: space-between;
 }
+
 .optionsHeader {
-  max-width: 100%;
+  margin-right: 40px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 50px;
 }
-.navLinks{
+
+.navLinks {
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
   font-variant: small-caps;
 }
-.navLinks:hover{
+
+.navLinks:hover {
   opacity: 50%;
   cursor: pointer;
 }
-.pageLogotype{
+
+.pageLogotype {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 10px;
   margin: 10px;
 }
-.headerLogo{
-  max-width: 50px;
-  max-height: 50px;
+
+.headerLogo {
+  margin-left: 20px;
+  max-width: 30px;
+  max-height: 30px;
+}
+.headerTitle{
+  font-size:x-large;
 }
 
 /* Banner Inicio */
 .bannerContainer {
   text-align: center;
-  align-self: center;
-  padding-right: 6vw;
-  padding-top: 24vh;
+  padding-top: 30vh;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  gap: var(--gap-small);
-  animation: move;
-  animation-duration: 2s;
+  gap: 20px;
+  animation: move 2s;
 }
 
 .innitBanner {
   text-align: center;
-  align-items: center;
-  width: 100vw; /* 100% del ancho de la vista */
-  height: 90vh; /* 100% del alto de la vista */
+  width: 100%; /* 100% del ancho de la vista */
+  height: 100vh; /* 100% del alto de la vista */
   background-color: var(--background-darker);
 }
 
@@ -123,285 +122,224 @@ p{
   color: var(--color-white);
   font-size: var(--font-size-title);
 }
-.refran{
+
+.refran {
+  font-weight:350;
   position: relative;
-  top: 10vh;
-  animation: moveup;
-  animation-duration: 2s;
+  padding-top: 40vh;
+  text-align: center;
+  animation: moveup 2s;
 }
 
 .triangle {
   position: absolute;
-  top: 52.5vh;
-  right: 0;
-  border-left: 500px solid transparent;
-  border-bottom: 350px solid var(--color-white);
-  animation: moveTri;
-  animation-duration: 2s;
+  bottom: 0;
+  left: 0;
+  border-right: 565px solid transparent;
+  border-top:370px solid var(--color-white);
+  animation: moveTri 2s;
 }
 
-/*Animaciones*/
-
-@keyframes progress-scroll{
-  from{height: 0%;}
-  to{height: 100%;}
-}
-
+/* Animaciones */
 @keyframes moveTri {
-  from{
-    transform: translateX(460px);
-  }
-  to{
-    transform: translateX(0px);
-  }
+  from { transform: translateX(-660px); }
+  to { transform: translateX(0px); }
 }
 
 @keyframes move {
-  from{
-    transform: translateY(-800px);
-  }
-  to{
-    transform: translateY(0px);
-  }
+  from { transform: translateY(-800px); }
+  to { transform: translateY(0px); }
 }
 
 @keyframes moveup {
-  from{
-    transform: translateY(100px);
-  }
-  to{
-    transform: translateY(0px);
-  }
+  from { transform: translateY(100px); }
+  to { transform: translateY(0px); }
 }
 
 @keyframes moveleftToRight {
-  from{
-    transform: translateX(-1600px);
-  }  
-  to{
-    transform: translate(0px);
-  }
+  from { transform: translateX(-600px); }
+  to { transform: translate(0px); }
 }
 
-@keyframes moveCardltr{
-  from{
-    transform: translateX(-300px);
-  }  
-  to{
-    transform: translateX(100px);
-  }
+@keyframes moveRightToLeft {
+  from { transform: translateX(1600px); }
+  to { transform: translate(0px); }
 }
 
-@keyframes moveCardutd{
-  from{
-    transform: translateY(-300px);
-  }  
-  to{
-    transform: translateY(0px);
-  }
+
+@keyframes moveCardltr {
+  from { transform: translateX(-300px); }
+  to { transform: translateX(0px); }
 }
 
-@keyframes moveCarddtu{
-  from{
-    transform: translateY(1200px);
-  }  
-  to{
-    transform: translateY(0px);
-  }
+@keyframes moveCardutd {
+  from { transform: translateY(-600px); }
+  to { transform: translateY(0px); }
 }
 
-@keyframes moveCardrtl{
-  from{
-    transform: translateX(1200px);
-  }  
-  to{
-    transform: translateX(-100px);
-  }
+@keyframes moveCarddtu {
+  from { transform: translateY(600px); }
+  to { transform: translateY(0px); }
 }
 
-/*Animaciones*/
+@keyframes moveCardrtl {
+  from { transform: translateX(300px); }
+  to { transform: translateX(0px); }
+}
+
+@keyframes moveBackToFront {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+#c1{
+  animation: moveCardutd 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1300px;
+}
+#c2{
+  animation: moveCarddtu 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1500px;
+}
+#c3{
+  animation: moveCardutd 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1300px;
+}
+#c4{
+  animation: moveCarddtu 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1300px;
+}
+#c5{
+  animation: moveCarddtu 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1300px;
+}
+#c6{
+  animation: moveCarddtu 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 1300px;
+}
 
 /* Sección Nosotros */
 .aboutUsSection {
   padding-top: 15vh;
   text-align: center;
-  z-index: 0;
-  width: 100vw; /* 100% del ancho de la vista */
+  width: 100%; /* 100% del ancho de la vista */
   height: 80vh; /* 100% del alto de la vista */
   background-color: var(--background-light);
-  animation: moveleftToRight;
+  animation: moveleftToRight 5s;
   animation-timeline: scroll(root);
   animation-range: 0 800px;
-  animation-duration: 5s;
 }
-.aboutUsContent{
+
+.aboutUsContent {
   align-content: center;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 80px;
 }
-.descripcion{
+
+.descripcion {
   align-self: center;
   max-width: 900px;
-  text-justify:inter-word;
+  text-justify: inter-word;
 }
-.secondaryTriangle{
+
+.secondaryTriangle {
   position: absolute;
-  top: 50.2vh;
+  bottom: 0;
   left: 0;
   border-right: 500px solid transparent;
-  border-bottom:220px solid var(--color-white);
-
+  border-bottom: 220px solid var(--color-white);
 }
 
-/*Services Section*/
-.servicesSectionContainer{
+/* Services Section */
+.servicesSectionContainer {
   padding-top: 15vh;
   text-align: center;
-  width: 100vw; /* 100% del ancho de la vista */
+  width: 100%; /* 100% del ancho de la vista */
   height: 100vh; /* 100% del alto de la vista */
-  background-color: #ffffff;
+  background-color: var(--color-white);
   opacity: 95%;
-  color: #090909;
+  color: var(--background-darker);
 }
-.serviceCard{
+
+.serviceCard {
   display: flex;
   flex-direction: column;
-  border-radius: 8%;
+  border-radius: 15% 0 15% 0;
   width: 20vw;
   height: 22vh;
   background: url('./assets/bcw.jpg');
-  background-size:cover;
-  border: solid 2px black;
+  background-size: cover;
+  border: solid 2px var(--background-darker);
   align-content: center;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  animation-delay: 2ms;
-  padding-top: 15px;
+  transition: all 0.5s ease-out;
 }
 
-#c1{
-  animation: moveCardltr;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-}
-#c2{
-  animation: moveCardutd;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-  z-index: 000;
-}
-#c3{
-  animation: moveCardrtl;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-}
-#c4{
-  animation: moveCardltr;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-}
-#c5{
-  animation: moveCarddtu;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-}
-#c6{
-  animation: moveCardrtl;
-  animation-timeline: scroll(root);
-  animation-range: 0 1475px;
-  animation-duration: 3s;
-}
-
-.serviceCard:hover{
+.serviceCard:hover {
   scale: 1.2;
   cursor: pointer;
   background: url('./assets/bc2.jpg');
-  background-size:cover;
-  color: #ffffff;
-  border-radius: 0%;transition-property:  all;
-}
-.serviceCard:hover::after{
-  animation: alternate-reverse;
+  background-size: cover;
+  color: var(--color-white);
+  border-radius: 0 15% 0 15%;
 }
 
-.gridSection{
+/* Grid Section */
+.gridSection {
   margin-top: 4vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 45px;
   padding: 20px;
   justify-items: center;
 }
-.gridSection h3{
-  font-weight: var(--subtitle-size);
-  align-self: center;
-}
-.gridSection p{
+
+.gridSection p {
   font-size: medium;
   padding: 20px;
 }
-.terciaryTriangle{
+
+.terciaryTriangle {
   position: absolute;
   top: 266.4vh;
   right: 0;
   border-left: 880px solid transparent;
-  border-top: 100px solid black;
+  border-top: 100px solid var(--background-dark);
 }
 
-/* Tecnologies Section*/
-.tecnologiesSection{
+/* Tecnologies Section */
+.tecnologiesSection {
   padding-top: 15vh;
   text-align: center;
-  width: 100vw; /* 100% del ancho de la vista */
+  width: 100%; /* 100% del ancho de la vista */
   height: 70vh; /* 100% del alto de la vista */
-  color: white;
+  color: var(--color-white);
   background-color: var(--background-light);
-
 }
 
-@keyframes moveBackToFront {
-  from{
-    transform: scale(0);
-  }
-  to{
-    transform: scale(1);
-  }
-}
-
-.tecnologiesContainer{
+.tecnologiesContainer {
   justify-content: center;
   align-content: center;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 70px; 
-   animation: moveBackToFront;
-  animation-range: 0 275px;
-  animation-duration: 2s;
-}
-
-/*product Section*/
-.productSection{
-  text-align: center;
-  width: 100vw; /* 100% del ancho de la vista */
-  height: 5vh; /* 100% del alto de la vista */
-  color: black;
-  background-color: white;
+  gap: 70px;
+  animation: moveBackToFront 2s;
+  animation-timeline: scroll(root);
+  animation-range: 0 2200px;
 }
 
 /*contact Section*/
 .contactSection{
   padding-top: 15vh;
   text-align: center;
-  width: 100vw; /* 100% del ancho de la vista */
+  width: 100%; /* 100% del ancho de la vista */
   height: 80vh; /* 100% del alto de la vista */
   color: white;
   background-color: var(--background-light);
@@ -442,7 +380,7 @@ p{
 .productSection{
   padding-top: 8vh;
   text-align: center;
-  width: 100vw; /* 100% del ancho de la vista */
+  width: 100%; /* 100% del ancho de la vista */
   height: 110vh; /* 100% del alto de la vista */
   color: white;
   background-color: rgb(0, 0, 0);
@@ -463,47 +401,52 @@ p{
   align-content: center;
 }
 .productContainer{
+  position: relative; /* Establece un contexto para las posiciones absolutas */
   height: 400px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
+  gap: 40px;
 }
 .productInfo{
   text-align: center;
   display: flex;
   flex-flow: column;
   justify-self: center;
-  gap: 50px;
 }
 
 .card{
-  width: 60px;
+  position: absolute;
+  width: 220px;
+  height: 450px;
   border-radius: .75rem;
   background-size: cover;
   cursor: pointer;
-  overflow: hidden;
   border-radius: 2rem;
-  margin: 0 20px;
   display: flex;
-  transition: .6s cubic-bezier(.80, -0.03,0,.9);
-  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  transition: .6s cubic-bezier(0.8, 2,0,2);
+  transition: transform 1s ease;
 }
+.card:hover{
+  z-index: 1111;
+  transform: scale(1.15); 
+}
+
 .card > .row{
-  color: black;
+  color: rgb(0, 0, 0);
   display: flex;
-  flex-wrap: nowrap;
 }
 .card > .row >.icon{
   background-color: #223;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
   border-radius: 50%;
-  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  
 }
 .card > .row > .description{
+  margin-left: 0px;
   display: flex;
   justify-content: center;
   font-size: smaller;
@@ -512,7 +455,6 @@ p{
   flex-direction: column;
   overflow: hidden;
   height: 410px;
-  width: 150px;
   opacity: 0;
   color: rgb(255, 255, 255);
 }
