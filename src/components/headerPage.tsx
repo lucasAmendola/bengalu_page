@@ -12,6 +12,8 @@ export default function headerPage() {
             <div className='optionsHeader'>
                 <a href="#contactSect" className='navLinks'><h4>Contacto</h4></a>
                 <a href="#productSect" className='navLinks'><h4>Productos</h4></a>
+                <a href="#aboutUs" className='navLinks'><h4>Nosotros</h4></a>
+                <a href="#services" className='navLinks'><h4>Servicios</h4></a>
             </div>
         </header>
   )

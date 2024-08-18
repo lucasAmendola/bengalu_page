@@ -3,7 +3,7 @@ import ServiceCard from './serviceCard'
 
 export default function servicesSection() {
   return (
-    <div className='servicesSectionContainer'>
+    <div id='services' className='servicesSectionContainer'>
         <div className='servicesContent'>
             <h1>¿Cómo podemos ayudarte?</h1>
             <div className='gridSection'>

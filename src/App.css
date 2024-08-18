@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 /* Reset CSS */
 * {
@@ -31,10 +32,10 @@
 
 /* General */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   background-color: var(--background-dark);
   color: var(--color-text);
+  text-align: justify;
 }
 
 h1 { 
@@ -49,26 +50,40 @@ p {
 
 /* Header */
 .headerContainer {
+  position: relative;
   z-index: 111;
   height: 3vw;
   position: fixed;
+  justify-content: end;
   width: 100%;
-  background-color: rgb(55, 55, 55);
-  color: var(--color-white);
+  background-color: rgba(55, 55, 55, 0);
+  color: white;
   display: flex;
-  justify-content: space-between;
+
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0 400px;
+}
+
+@keyframes enhance-header{
+  to{
+    color: rgb(0, 0, 0);
+     background: rgba(46, 46, 50, 0.951);
+  }
+ 
 }
 
 .optionsHeader {
-  margin-right: 40px;
+  padding-right: 4vw;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 50px;
 }
 
 .navLinks {
   text-decoration: none;
-  color: var(--color-white);
+  color: white;
   font-variant: small-caps;
 }
 
@@ -85,60 +100,178 @@ p {
 }
 
 .headerLogo {
+  display: none;
   margin-left: 20px;
   max-width: 30px;
   max-height: 30px;
 }
 .headerTitle{
+  display: none;
   font-size:x-large;
 }
 
 /* Banner Inicio */
 .bannerContainer {
+  position: relative;
   text-align: center;
-  padding-top: 30vh;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  animation: move 2s;
+  flex-direction: row;
 }
 
 .innitBanner {
   text-align: center;
   width: 100%; /* 100% del ancho de la vista */
   height: 100vh; /* 100% del alto de la vista */
-  background-color: var(--background-darker);
+}
+
+
+.rightSide{
+  position: relative;
+  z-index: 0;
+  background: url(assets/brainpattern.jpg);
+  background-size: cover; 
+  height: 100vh;
+  width: 50%;
+  opacity: 95%;
+  align-content:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-out;
+}
+
+.rightSide:hover{
+  background: url('assets/brainpattern4.jpg');
+  background-size: cover; 
+  transition: all 0.5s ease-out;
+}
+.rightSide:hover::after{
+  background: url('assets/brainpattern.jpg');
+  background-size: cover; 
+  transition: all 0.5s ease;
+}
+
+.rightSide:hover .bannerLogo{
+  cursor: pointer;
+  animation: moveLogodtu 20000s ease-out ;
+}
+.rightSide:hover .bannerTitle{
+  cursor: pointer;
+  animation: moveLogoDown 20000s ease-out ;
+}
+
+.circle{
+  background-color: #090909;
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  display: none;
+  padding-top: 50px;
+  transition: all 0.5s ease-out;
+  justify-self: center;
+  align-self: center;
+}
+
+.circle img{
+  padding-top: 40px;
+}
+
+.circle h1{
+  font-size: 30px;
+}
+
+.rightSide:hover .circle{
+  display: block;
+  animation: circleAppear 1s ease-out;
+}
+
+@keyframes circleAppear{
+  from { transform:scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes moveLogodtu{
+  from { transform: translateY(110px); }
+  to { transform: translateY(-6000000px); }
+}
+
+@keyframes moveLogoDown{
+  from { transform: translateY(110px); }
+  to { transform: translateY(6000000px); }
+}
+
+.logoContainer{
+  z-index: 1;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 .bannerLogo {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 90px;
+  max-height: 90px;
+  animation: moveCardutd 1s ease;
 }
 
 .bannerTitle {
-  position: relative;
-  top: 2vh;
   font-weight: normal;
-  color: var(--color-white);
-  font-size: var(--font-size-title);
+  color: white;
+  font-size: 80px;
+  animation: moveCarddtu 1s ease;
 }
 
 .refran {
-  font-weight:350;
-  position: relative;
-  padding-top: 40vh;
-  text-align: center;
-  animation: moveup 2s;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: bold;
+  max-width: 400px;
+  font-size: 65px;
+}
+.parrafoBanner{
+  z-index: 1;
+  color: white;
+  z-index: 1;
+  padding-top: 30px;
+  font-weight:bold;
+  max-width: 470px;
+  font-size: 25px;
 }
 
-.triangle {
+.leftSideContainer{
+  padding-left: 90px;
+  text-align:left;
+  gap: 110px;
+}
+
+.leftSide{
+  z-index: 1;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 3, 19, 0.603);
+  width: 50%;
+}
+
+.leftSide:hover{
+  cursor: pointer;
+}
+
+
+
+/* Banner Inicio */
+
+/*.triangle {
   position: absolute;
   bottom: 0;
   left: 0;
   border-right: 565px solid transparent;
-  border-top:370px solid var(--color-white);
+  border-top:370px solid white;
   animation: moveTri 2s;
-}
+}*/
 
 /* Animaciones */
 @keyframes moveTri {
@@ -152,7 +285,7 @@ p {
 }
 
 @keyframes moveup {
-  from { transform: translateY(100px); }
+  from { transform: translateY(500px); }
   to { transform: translateY(0px); }
 }
 
@@ -229,10 +362,10 @@ p {
   text-align: center;
   width: 100%; /* 100% del ancho de la vista */
   height: 80vh; /* 100% del alto de la vista */
-  background-color: var(--background-light);
+  background-color: #171717;
   animation: moveleftToRight 5s;
   animation-timeline: scroll(root);
-  animation-range: 0 800px;
+  animation-range: 0 750px;
 }
 
 .aboutUsContent {
@@ -254,7 +387,7 @@ p {
   bottom: 0;
   left: 0;
   border-right: 500px solid transparent;
-  border-bottom: 220px solid var(--color-white);
+  border-bottom: 220px solid white;
 }
 
 /* Services Section */
@@ -263,9 +396,9 @@ p {
   text-align: center;
   width: 100%; /* 100% del ancho de la vista */
   height: 100vh; /* 100% del alto de la vista */
-  background-color: var(--color-white);
+  background-color: white;
   opacity: 95%;
-  color: var(--background-darker);
+  color: #090909;
 }
 
 .serviceCard {
@@ -276,7 +409,7 @@ p {
   height: 22vh;
   background: url('./assets/bcw.jpg');
   background-size: cover;
-  border: solid 2px var(--background-darker);
+  border: solid 2px #090909;
   align-content: center;
   transition: all 0.5s ease-out;
 }
@@ -286,7 +419,7 @@ p {
   cursor: pointer;
   background: url('./assets/bc2.jpg');
   background-size: cover;
-  color: var(--color-white);
+  color: white;
   border-radius: 0 15% 0 15%;
 }
 
@@ -310,7 +443,7 @@ p {
   top: 266.4vh;
   right: 0;
   border-left: 880px solid transparent;
-  border-top: 100px solid var(--background-dark);
+  border-top: 100px solid #181818;
 }
 
 /* Tecnologies Section */
@@ -319,8 +452,8 @@ p {
   text-align: center;
   width: 100%; /* 100% del ancho de la vista */
   height: 70vh; /* 100% del alto de la vista */
-  color: var(--color-white);
-  background-color: var(--background-light);
+  color: white;
+  background-color: #171717;
 }
 
 .tecnologiesContainer {
@@ -342,7 +475,7 @@ p {
   width: 100%; /* 100% del ancho de la vista */
   height: 80vh; /* 100% del alto de la vista */
   color: white;
-  background-color: var(--background-light);
+  background-color: #171717;
 }
 .contactContainer{
   justify-content: center;

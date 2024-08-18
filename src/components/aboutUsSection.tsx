@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function aboutUsSection() {
   return (
-    <div className='aboutUsSection'>
+    <div id='aboutUs' className='aboutUsSection'>
         <div className='secondaryTriangle'></div>
         <div className='aboutUsContent'>
             <h1>Sobre Bengalu</h1>

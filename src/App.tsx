@@ -18,7 +18,6 @@ function App() {
         <ProductsSection/>
         <ContactSection/>
     </div>
-
   );
 }
 
